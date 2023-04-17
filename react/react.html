@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <title>React</title>
+</head>
+<body>
+    <div id="example"></div>
+
+
+
+    <script type="text/babel">
+        // var myStyle = {
+        //     // backgroundColor:black,
+        //     // color:white,
+        //     fontSize:50
+        // };
+        // ReactDOM.render(
+        //     <h1 style = {myStyle}>菜鸟教程</h1>,
+        //     document.getElementById("example")
+        // );
+
+
+
+
+
+        class Hellow extends React.Component{
+            constructor(){
+                super()
+                this.state = {
+                    content:"true"
+                }
+
+            }
+            change(obj){
+                this.setState({
+                    content:!this.state.content
+                })
+                console.log(obj);
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>{this.state.content?"开启":"关闭"}</h1>
+                        <h2>上方标志着状态</h2>
+                        <button onClick={()=>this.change(this.state.content)}>
+                        点击   
+                        </button> 
+                    </div>
+                )
+            }
+
+        }
+        ReactDOM.render(<Hellow />,document.getElementById('example'))
+    </script>
+
+</body>
+</html>
